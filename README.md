@@ -12,7 +12,7 @@ from title-case with spaces, commas, and 'and''s where they should be, to nothin
 ### `convert`
 
 ```rust
-fn convert(val: i64, fmt: Formatting) -> String
+fn convert(val: f64, fmt: Formatting) -> String
 ```
 This is the base function, set your `val`, and then play around with the options in the `Formatting` struct to get the precise output
 you desire.
@@ -20,7 +20,7 @@ you desire.
 ### `convert_all_fmt`
 
 ```rust
-fn convert_all_fmt(val: i64) -> String
+fn convert_all_fmt(val: f64) -> String
 ```
 Use this function to get an output with all the bells and whistles, example:
 
@@ -31,7 +31,7 @@ Much better, right?
 ### `convert_no_fmt`
 
 ```rust
-fn convert_no_fmt(val: i64) -> String
+fn convert_no_fmt(val: f64) -> String
 ```
 Use this function to get an output as bare-bones as possible, no spaces, no hyphens, no nothing! Example:
 
@@ -42,7 +42,7 @@ If that isn't easy to read, I don't know what is!
 ### `convert_long`
 
 ```rust
-fn convert_long(val: i64, fmt: Formatting) -> String
+fn convert_long(val: f64, fmt: Formatting) -> String
 ```
 Use this to convert using the "long" numbering format, used in the EU and French Canada. Example:
 
