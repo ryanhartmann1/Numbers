@@ -7,11 +7,11 @@ pub struct Groups(Sign, Vec<Group>);
 
 impl Groups
 {
-    pub fn new(val: i64) -> Groups
+    pub fn new(val: f64) -> Groups
     {
         let sign = Sign::new(val);
 
-        let val = i64::abs(val);
+        let val = f64::abs(val);
 
         let groups =
         {
@@ -143,10 +143,11 @@ impl Group
     {
         assert!(val < 1000);
 
+		let decimal = Decimal::new(val *100);
         let hundreds = Hundreds::new(val / 100);
         let tens = Tens::new(val % 100);
 
-        Group(hundreds, tens)
+        Group(hundreds, tens, decimal)
     }
 
     pub fn build(&self) -> Option<Words>

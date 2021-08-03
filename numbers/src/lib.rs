@@ -6,6 +6,7 @@
 mod groups;
 mod hundreds;
 mod tens;
+mod decimal;
 
 mod words;
 mod formatting;
@@ -20,7 +21,7 @@ pub use formatting::Formatting;
 /// Arguments:
 /// * `val`: the `i64` to convert  
 /// * `fmt`: the formatting options to use
-pub fn convert(val: i64, fmt: Formatting) -> String
+pub fn convert(val: f64, fmt: Formatting) -> String
 {
     groups::Groups::new(val)
         .build(false)
@@ -31,7 +32,7 @@ pub fn convert(val: i64, fmt: Formatting) -> String
 ///
 /// # Arguments:
 /// * `val` - the `i64` to convert
-pub fn convert_all_fmt(val: i64) -> String
+pub fn convert_all_fmt(val: f64) -> String
 {
     groups::Groups::new(val)
         .build(false)
@@ -42,7 +43,7 @@ pub fn convert_all_fmt(val: i64) -> String
 ///
 /// # Arguments:
 /// * `val` - the `i64` to convert
-pub fn convert_no_fmt(val: i64) -> String
+pub fn convert_no_fmt(val: f64) -> String
 {
     groups::Groups::new(val)
         .build(false)
@@ -54,7 +55,7 @@ pub fn convert_no_fmt(val: i64) -> String
 /// # Arguments:
 /// * `val` - the `i64` to convert  
 /// * `fmt` - the formatting options to use
-pub fn convert_long(val: i64, fmt: Formatting) -> String
+pub fn convert_long(val: f64, fmt: Formatting) -> String
 {
     groups::Groups::new(val)
         .build(true)

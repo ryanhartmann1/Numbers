@@ -2,7 +2,7 @@ use words::{Words, Word};
 
 pub struct Tens(u8, u8);
 
-impl Tens
+impl Decimal
 {
     pub fn new(val: usize) -> Tens
     {
@@ -89,7 +89,7 @@ impl Tens
                     Word::Number(tens.to_owned()),
                     Word::Dash,
                     Word::Number(ones.to_owned()),
-					" dollars and"
+					" cents"
                 ]))
             }
         }
