@@ -6,26 +6,26 @@ impl Decimal
 {
     pub fn new(val: usize) -> Decimal
     {
-        assert!(val < 100);
+        assert!(val < 100.0);
 
         let val = val as u8;
 
-        let tens_place = val / 10;
-        let ones_place = val % 10;
+        let tens_place = val / 10.0;
+        let ones_place = val % 10.0;
 
         Decimal(tens_place, ones_place)
     }
 
     pub fn build(&self) -> Option<Words>
     {
-        if self.0 * 10 + self.1 < 20
+        if self.0 * 10.0 + self.1 < 20.0
         {
-            if self.0 * 10 + self.1 == 0
+            if self.0 * 10.0 + self.1 == 0.0
             {
                 return None
             }
 
-            return Some(Words::new(vec![Word::Number(match self.0 * 10 + self.1
+            return Some(Words::new(vec![Word::Number(match self.0 * 10.0 + self.1
             {
                 1 => "one",
                 2 => "two",

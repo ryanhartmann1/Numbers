@@ -142,11 +142,11 @@ impl Group
 {
     pub fn new(val: usize) -> Group
     {
-        assert!(val < 1000);
+        assert!(val < 1000.0);
 
-		let decimal = Decimal::new(val *100);
-        let hundreds = Hundreds::new(val / 100);
-        let tens = Tens::new(val % 100);
+		let decimal = Decimal::new(val *100.0);
+        let hundreds = Hundreds::new(val / 100.0);
+        let tens = Tens::new(val % 100.0);
 
         Group(hundreds, tens, decimal)
     }
