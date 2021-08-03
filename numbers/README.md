@@ -1,6 +1,6 @@
-[![crates.io](https://img.shields.io/crates/v/english-numbers.svg)](https://crates.io/crates/english-numbers)
+[![crates.io](https://img.shields.io/crates/v/english-numbers.svg)]
 
-# english-numbers
+# Numbers
 
 Convert your boring old `i64`'s to shiny new `String`'s!
 
