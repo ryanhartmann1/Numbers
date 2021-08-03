@@ -1,6 +1,6 @@
 [package]
 name = "numbers"
-version = "0.3.3"
+version = "0.3.4"
 authors = ["Matthew Maclean"]
 description = "Convert integers to written English number format"
 keywords = ["english", "number", "convert", "format"]
