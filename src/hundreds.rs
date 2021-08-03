@@ -6,14 +6,14 @@ impl Hundreds
 {
     pub fn new(val: usize) -> Hundreds
     {
-        assert!(val < 10.0);
+        assert!(val < 10);
 
         Hundreds(val as u8)
     }
 
     pub fn build(&self) -> Option<Words>
     {
-        if self.0 == 0.0
+        if self.0 == 0
         {
             return None
         }

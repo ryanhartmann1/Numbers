@@ -6,12 +6,12 @@ impl Tens
 {
     pub fn new(val: usize) -> Tens
     {
-        assert!(val < 100.0);
+        assert!(val < 100);
 
         let val = val as u8;
 
-        let tens_place = val / 10.0;
-        let ones_place = val % 10.0;
+        let tens_place = val / 10;
+        let ones_place = val % 10;
 
         Tens(tens_place, ones_place)
     }
@@ -64,7 +64,7 @@ impl Tens
                 _ => unreachable!()
             };
 
-            if self.1 == 0.0
+            if self.1 == 0
             {
                 return Some(Words::new(vec![Word::Number(tens.to_owned())]))
             }
