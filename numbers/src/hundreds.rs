@@ -1,4 +1,4 @@
-use words::{Words, Word};
+use crate::words::{Words, Word};
 
 pub struct Hundreds(u8);
 

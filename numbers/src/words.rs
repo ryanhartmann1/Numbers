@@ -1,4 +1,4 @@
-use formatting::Formatting;
+use crate::formatting::Formatting;
 
 #[derive(Clone)]
 pub struct Words(Vec<Word>);
@@ -35,6 +35,8 @@ pub enum Word
     Dash,
     Comma,
     Space,
+	Dollar,
+	Cents,
 }
 
 impl Word
@@ -102,6 +104,22 @@ impl Word
             {
                 String::new()
             }
+			&Word::Dollar => if fmt.Dollar
+			{
+				String::from("Dollar")
+			}
+			else
+			{
+				String::new()
+			}
+			&Word::Cents => if fmt.Dollar
+			{
+				String::from("Cents")
+			}
+			else
+			{
+				String::new()
+			}
         }
     }
 }

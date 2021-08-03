@@ -1,10 +1,10 @@
-use words::{Words, Word};
+use crate::words::{Words, Word};
 
-pub struct Tens(u8, u8);
+pub struct Decimal(u8, u8);
 
 impl Decimal
 {
-    pub fn new(val: usize) -> Tens
+    pub fn new(val: usize) -> Decimal
     {
         assert!(val < 100);
 
@@ -13,7 +13,7 @@ impl Decimal
         let tens_place = val / 10;
         let ones_place = val % 10;
 
-        Tens(tens_place, ones_place)
+        Decimal(tens_place, ones_place)
     }
 
     pub fn build(&self) -> Option<Words>
@@ -89,7 +89,7 @@ impl Decimal
                     Word::Number(tens.to_owned()),
                     Word::Dash,
                     Word::Number(ones.to_owned()),
-					" cents"
+					Word::Cents,
                 ]))
             }
         }

@@ -1,7 +1,8 @@
-use words::{Word, Words};
+use crate::words::{Word, Words};
 
-use tens::*;
-use hundreds::*;
+use crate::tens::*;
+use crate::hundreds::*;
+use crate::decimal::*;
 
 pub struct Groups(Sign, Vec<Group>);
 
@@ -135,7 +136,7 @@ impl Groups
     }
 }
 
-pub struct Group(Hundreds, Tens);
+pub struct Group(Hundreds, Tens, Decimal);
 
 impl Group
 {
@@ -182,9 +183,9 @@ enum Sign
 
 impl Sign
 {
-    pub fn new(val: i64) -> Sign
+    pub fn new(val: f64) -> Sign
     {
-        match val >= 0
+        match val >= 0.0
         {
             true => Sign::Positive,
             false => Sign::Negative

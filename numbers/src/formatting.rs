@@ -14,6 +14,10 @@ pub struct Formatting
     pub commas: bool,
     /// Controls the use of dashes. "Forty-Five" vs "Forty Five"
     pub dashes: bool,
+	/// Controls the use of dollars and cents
+	pub Dollar: bool,
+	/// Controls the use of euros and cents
+	pub Euro: bool,
 }
 
 impl Formatting
@@ -27,7 +31,9 @@ impl Formatting
             spaces: true,
             conjunctions: true,
             commas: false,
-            dashes: true
+            dashes: true,
+			Dollar: true,
+			Euro: false
         }
     }
 
@@ -40,7 +46,9 @@ impl Formatting
             spaces: false,
             conjunctions: false,
             commas: false,
-            dashes: false
+            dashes: false,
+			Dollar: false,
+			Euro: false
         }
     }
 }

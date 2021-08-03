@@ -1,9 +1,9 @@
-use words::{Words, Word};
-use formatting::Formatting;
+use crate::words::{Words, Word};
+use crate::formatting::Formatting;
 
-use tens::Tens;
-use hundreds::Hundreds;
-use groups::{Groups, Group};
+use crate::tens::Tens;
+use crate::hundreds::Hundreds;
+use crate::groups::{Groups, Group};
 
 use super::convert_all_fmt;
 

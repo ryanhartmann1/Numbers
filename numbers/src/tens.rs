@@ -1,4 +1,4 @@
-use words::{Words, Word};
+use crate::words::{Words, Word};
 
 pub struct Tens(u8, u8);
 
@@ -89,7 +89,7 @@ impl Tens
                     Word::Number(tens.to_owned()),
                     Word::Dash,
                     Word::Number(ones.to_owned()),
-					" dollars and"
+					Word::Dollar,
                 ]))
             }
         }
