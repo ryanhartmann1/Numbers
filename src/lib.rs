@@ -21,18 +21,18 @@ pub use formatting::Formatting;
 /// Arguments:
 /// * `val`: the `i64` to convert  
 /// * `fmt`: the formatting options to use
-pub fn convert(val: i64) -> String
+pub fn convert_def(val: i64) -> String
 {
     groups::Groups::new(val)
-        .build(false, Formatting::dollar())
-        .build(Formatting::dollar())
+        .build(false, Formatting::def())
+        .build(Formatting::def())
 }
 
 /// Converts a number to it's written format, using "short" format with all formatting options enabled.
 ///
 /// # Arguments:
 /// * `val` - the `i64` to convert
-pub fn convert_all_fmt(val: i64) -> String
+pub fn convert_norm_dol(val: i64) -> String
 {
     groups::Groups::new(val)
         .build(false, Formatting::dollar())
@@ -43,7 +43,7 @@ pub fn convert_all_fmt(val: i64) -> String
 ///
 /// # Arguments:
 /// * `val` - the `i64` to convert
-pub fn convert_no_fmt(val: i64) -> String
+pub fn convert_norm_cent(val: i64) -> String
 {
     groups::Groups::new(val)
         .build(false, Formatting::cents())
@@ -55,9 +55,9 @@ pub fn convert_no_fmt(val: i64) -> String
 /// # Arguments:
 /// * `val` - the `i64` to convert  
 /// * `fmt` - the formatting options to use
-pub fn convert_long(val: i64) -> String
+pub fn convert_norm_euro(val: i64) -> String
 {
     groups::Groups::new(val)
-        .build(true, Formatting::euro())
+        .build(false, Formatting::euro())
         .build(Formatting::euro())
 }

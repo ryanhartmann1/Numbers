@@ -24,6 +24,18 @@ pub struct Formatting
 
 impl Formatting
 {
+
+	pub fn def() -> Formatting
+	{
+		title_case: true,
+		spaces: true,
+		conjunctions: false,
+		commas: false,
+		dashes: false,
+		Dollar: false,
+		Cents: false,
+		Euro: false
+	}
     /// All formatting options enabled
     pub fn dollar() -> Formatting
     {
