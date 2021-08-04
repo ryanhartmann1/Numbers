@@ -29,7 +29,7 @@ impl Formatting
         {
             title_case: true,
             spaces: true,
-            conjunctions: true,
+            conjunctions: false,
             commas: false,
             dashes: true,
 			Dollar: true,
