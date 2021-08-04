@@ -24,8 +24,8 @@ pub use formatting::Formatting;
 pub fn convert_def(val: i64) -> String
 {
     groups::Groups::new(val)
-        .build(false, Formatting::def())
-        .build(Formatting::def())
+        .build(false, Formatting::hint())
+        .build(Formatting::hint())
 }
 
 /// Converts a number to it's written format, using "short" format with all formatting options enabled.

@@ -25,7 +25,7 @@ pub struct Formatting
 impl Formatting
 {
 
-	pub fn def() -> Formatting
+	pub fn hint() -> Formatting
 	{
 		title_case: true,
 		spaces: true,
