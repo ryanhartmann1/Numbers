@@ -47,7 +47,7 @@ pub fn convert_no_fmt(val: i64) -> String
 {
     groups::Groups::new(val)
         .build(false)
-        .build(Formatting::none())
+        .build(Formatting::cents())
 }
 
 /// Converts a number to it's written format, using "long" format.
