@@ -35,21 +35,23 @@ impl Formatting
             commas: false,
             dashes: true,
 			Dollar: true,
+			Cents: false,
 			Euro: false
         }
     }
 
     /// No formatting options enabled
-    pub fn none() -> Formatting
+    pub fn cents() -> Formatting
     {
         Formatting
         {
-            title_case: false,
-            spaces: false,
+            title_case: true,
+            spaces: true,
             conjunctions: false,
             commas: false,
             dashes: false,
 			Dollar: false,
+			Cents: true,
 			Euro: false
         }
     }
