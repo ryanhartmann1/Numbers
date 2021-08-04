@@ -41,7 +41,7 @@ impl Groups
         Groups(sign, groups)
     }
 
-    pub fn build(&self, long: bool) -> Words
+    pub fn build(&self, long: bool, fmt: Formatting) -> Words
     {
         let places: [Words; 7] = if long
         {
@@ -132,8 +132,13 @@ impl Groups
 
             return temp;
         }
-		
-
+		if fmt.Dollar {
+			words.add(Words::new(vec![Word::Dollar]));
+		}if fmt.Cents {
+			words.add(Words::new(vec![Word::Cents]));
+		}if fmt.Euro {
+			words.add(Words::new(vec![Word::Euro]));
+		}
 
         words
     }

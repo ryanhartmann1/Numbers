@@ -35,7 +35,7 @@ pub fn convert(val: i64, fmt: Formatting) -> String
 pub fn convert_all_fmt(val: i64) -> String
 {
     groups::Groups::new(val)
-        .build(false)
+        .build(false, Formatting::dollar())
         .build(Formatting::dollar())
 }
 
@@ -46,7 +46,7 @@ pub fn convert_all_fmt(val: i64) -> String
 pub fn convert_no_fmt(val: i64) -> String
 {
     groups::Groups::new(val)
-        .build(false)
+        .build(false, Formatting::cents())
         .build(Formatting::cents())
 }
 
@@ -55,9 +55,9 @@ pub fn convert_no_fmt(val: i64) -> String
 /// # Arguments:
 /// * `val` - the `i64` to convert  
 /// * `fmt` - the formatting options to use
-pub fn convert_long(val: i64, fmt: Formatting) -> String
+pub fn convert_long(val: i64) -> String
 {
     groups::Groups::new(val)
-        .build(true)
-        .build(fmt)
+        .build(true, Formatting::euro())
+        .build(Formatting::euro())
 }
