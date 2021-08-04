@@ -20,6 +20,8 @@ pub struct Formatting
 	pub Cents: bool,
 	/// Controls the use of euros and cents
 	pub Euro: bool,
+	///Blank entry instead of dollars or euros
+	pub Nothing: bool,
 }
 
 impl Formatting
