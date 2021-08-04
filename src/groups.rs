@@ -183,9 +183,9 @@ enum Sign
 
 impl Sign
 {
-    pub fn new(val: f64) -> Sign
+    pub fn new(val: i64) -> Sign
     {
-        match val >= 0.0
+        match val >= 0
         {
             true => Sign::Positive,
             false => Sign::Negative
