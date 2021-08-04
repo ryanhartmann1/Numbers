@@ -138,7 +138,10 @@ impl Groups
 			words.add(Words::new(vec![Word::Cents]));
 		}if fmt.Euro {
 			words.add(Words::new(vec![Word::Euro]));
+		}if fmt.Nothing{
+			words.add(Words::new(vec![Word::Space]));
 		}
+
 
         words
     }

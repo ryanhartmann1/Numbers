@@ -34,9 +34,10 @@ impl Formatting
             conjunctions: false,
             commas: false,
             dashes: true,
-			Dollar: true,
+			Dollar: false,
 			Cents: false,
-			Euro: false
+			Euro: false,
+			Nothing: true
         }
     }
 	
