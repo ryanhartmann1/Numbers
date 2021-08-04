@@ -25,7 +25,7 @@ pub struct Formatting
 impl Formatting
 {
     /// All formatting options enabled
-    pub fn all() -> Formatting
+    pub fn dollar() -> Formatting
     {
         Formatting
         {

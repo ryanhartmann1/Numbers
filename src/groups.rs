@@ -3,6 +3,7 @@ use crate::words::{Word, Words};
 use crate::tens::*;
 use crate::hundreds::*;
 use crate::decimal::*;
+use crate::formatting::*;
 
 pub struct Groups(Sign, Vec<Group>);
 
