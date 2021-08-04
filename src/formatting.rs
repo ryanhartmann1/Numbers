@@ -55,7 +55,8 @@ impl Formatting
             dashes: true,
 			Dollar: true,
 			Cents: false,
-			Euro: false
+			Euro: false,
+			Nothing: false
         }
     }
 
@@ -71,7 +72,8 @@ impl Formatting
             dashes: false,
 			Dollar: false,
 			Cents: true,
-			Euro: false
+			Euro: false,
+			Nothing: false
         }
     }
 	
@@ -86,7 +88,8 @@ impl Formatting
 			dashes: false,
 			Dollar: false,
 			Cents: false,
-			Euro: true
+			Euro: true,
+			Nothing: false
 		}
 	}
 }
