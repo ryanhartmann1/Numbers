@@ -21,11 +21,11 @@ pub use formatting::Formatting;
 /// Arguments:
 /// * `val`: the `i64` to convert  
 /// * `fmt`: the formatting options to use
-pub fn convert(val: i64, fmt: Formatting) -> String
+pub fn convert(val: i64) -> String
 {
     groups::Groups::new(val)
-        .build(false)
-        .build(fmt)
+        .build(false, Formatting::dollar())
+        .build(Formatting::dollar())
 }
 
 /// Converts a number to it's written format, using "short" format with all formatting options enabled.

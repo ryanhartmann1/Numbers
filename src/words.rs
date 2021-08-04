@@ -37,6 +37,7 @@ pub enum Word
     Space,
 	Dollar,
 	Cents,
+	Euro,
 }
 
 impl Word
@@ -115,6 +116,14 @@ impl Word
 			&Word::Cents => if fmt.Cents
 			{
 				String::from(" Cents")
+			}
+			else
+			{
+				String::new()
+			}
+			&Word::Euro => if fmt.Euro
+			{
+				String::from(" Euro")
 			}
 			else
 			{

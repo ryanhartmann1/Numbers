@@ -55,6 +55,21 @@ impl Formatting
 			Euro: false
         }
     }
+
+	pub fn euro() -> Formatting
+	{
+		Formatting
+		{
+			title_case: true,
+			spaces: true,
+			conjunctions: false,
+			commas: false,
+			dashes: false,
+			Dollar: false,
+			Cents: false,
+			Euro: true
+		}
+	}
 }
 
 impl Default for Formatting
