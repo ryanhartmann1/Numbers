@@ -25,7 +25,20 @@ pub struct Formatting
 impl Formatting
 {
 	/// Basic formatting
-
+	 pub fn def() -> Formatting
+    {
+        Formatting
+        {
+            title_case: true,
+            spaces: true,
+            conjunctions: false,
+            commas: false,
+            dashes: true,
+			Dollar: true,
+			Cents: false,
+			Euro: false
+        }
+    }
 	
     /// All formatting options enabled
     pub fn dollar() -> Formatting
@@ -58,18 +71,6 @@ impl Formatting
 			Euro: false
         }
     }
-	
-	pub fn hint() -> Formatting
-	{
-		title_case: true,
-		spaces: true,
-		conjunctions: false,
-		commas: false,
-		dashes: false,
-		Dollar: false,
-		Cents: false,
-		Euro: false
-	}
 	
 	pub fn euro() -> Formatting
 	{
