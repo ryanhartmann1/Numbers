@@ -106,7 +106,7 @@ impl Word
             }
 			&Word::Dollar => if fmt.Dollar
 			{
-				String::from("Dollar")
+				String::from(" Dollar")
 			}
 			else
 			{
@@ -114,7 +114,7 @@ impl Word
 			}
 			&Word::Cents => if fmt.Dollar
 			{
-				String::from("Cents")
+				String::from(" Cents")
 			}
 			else
 			{

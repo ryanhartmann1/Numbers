@@ -89,7 +89,6 @@ impl Tens
                     Word::Number(tens.to_owned()),
                     Word::Dash,
                     Word::Number(ones.to_owned()),
-					Word::Dollar,
                 ]))
             }
         }

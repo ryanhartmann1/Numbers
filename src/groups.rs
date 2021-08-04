@@ -145,8 +145,8 @@ impl Group
         assert!(val < 1000);
 
 		let decimal = Decimal::new(val % 10);
-        let hundreds = Hundreds::new(val / 100);
-        let tens = Tens::new(val % 100);
+        let hundreds = Hundreds::new(val / 10000);
+        let tens = Tens::new(val % 10000);
 
         Group(hundreds, tens, decimal)
     }
