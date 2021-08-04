@@ -24,7 +24,7 @@ pub struct Formatting
 
 impl Formatting
 {
-
+	/// Basic formatting
 	pub fn hint() -> Formatting
 	{
 		title_case: true,
