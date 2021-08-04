@@ -61,6 +61,6 @@ impl Default for Formatting
 {
     fn default() -> Formatting
     {
-        Formatting::none()
+        Formatting::dollar()
     }
 }
