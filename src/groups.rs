@@ -85,7 +85,6 @@ impl Groups
                         {
                             words.add(Words::new(vec![Word::Space]));
                             words.add(places[index].clone());
-							words.add(Words::new(vec![Word::Dollar]));
                         }
 
                         Some(words)
@@ -132,6 +131,7 @@ impl Groups
 
             return temp;
         }
+		words.add(Words::new(vec![Word::Dollar]));
 
         words
     }
