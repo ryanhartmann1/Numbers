@@ -112,7 +112,7 @@ impl Word
 			{
 				String::new()
 			}
-			&Word::Cents => if fmt.Dollar
+			&Word::Cents => if fmt.Cents
 			{
 				String::from(" Cents")
 			}

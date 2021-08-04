@@ -132,13 +132,7 @@ impl Groups
 
             return temp;
         }
-		if fmt.Dollar{
-			words.add(Words::new(vec![Word::Dollar]));
-		}if fmt.Cents{
-			words.add(Words::new(vec![Word::Cents]));
-		}if fmt.Euro{
-			words.add(Words::new(vec![Word::Euro]));
-		}
+		
 
 
         words

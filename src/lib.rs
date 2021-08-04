@@ -36,7 +36,7 @@ pub fn convert_all_fmt(val: i64) -> String
 {
     groups::Groups::new(val)
         .build(false)
-        .build(Formatting::all())
+        .build(Formatting::dollar())
 }
 
 /// Converts a number to it's written format, using "short" format with no formatting options enabled.
