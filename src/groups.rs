@@ -270,7 +270,7 @@ impl Groups
 	}
 }
 
-pub struct Group(Hundreds, Tens, Decimal);
+pub struct Group(Hundreds, Tens);
 
 impl Group
 {
