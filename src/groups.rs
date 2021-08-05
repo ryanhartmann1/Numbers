@@ -282,7 +282,7 @@ impl Group
         let hundreds = Hundreds::new(val / 100);
         let tens = Tens::new(val % 100);
 
-        Group(hundreds, tens, decimal)
+        Group(hundreds, tens)
     }
 
     pub fn build(&self) -> Option<Words>
