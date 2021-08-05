@@ -147,11 +147,7 @@ impl Groups
 			{
 				words.add(Words::new(vec![Word::Tenths]));
 			}
-			else
-			{
-				words
-			}
-			if val / 100 < 1
+			else if val / 100 < 1
 			{
 				words.add(Words::new(vec![Word::Hundreths]));
 			}
