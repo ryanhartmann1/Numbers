@@ -143,27 +143,27 @@ impl Groups
 		}
 		if fmt.Decimal
 		{
-			if val / 10 < 0 
+			if val / 10 < 1
 			{
 				words.add(Words::new(vec![Word::Tenths]));
 			}
-			if val / 100 < 0
+			if val / 100 < 1
 			{
 				words.add(Words::new(vec![Word::Hundreths]));
 			}
-			if val / 1000 < 0 
+			if val / 1000 < 1
 			{
 				words.add(Words::new(vec![Word::Thousandths]));
 			}
-			if val / 10000 < 0
+			if val / 10000 < 1
 			{
 				words.add(Words::new(vec![Word::TenThousandths]));
 			}
-			if val / 100000 < 0
+			if val / 100000 < 1
 			{
 				words.add(Words::new(vec![Word::HundredThousandths]));
 			}
-			if val / 1000000 < 0 
+			if val / 1000000 < 1 
 			{
 				words.add(Words::new(vec![Word::Millionths]));
 			}
