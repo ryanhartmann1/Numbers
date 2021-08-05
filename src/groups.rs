@@ -238,7 +238,7 @@ impl Groups
             return temp;
         }
 
-		if fmt.dec()
+		if fmt.Decimal()
 		{
 			if val %10 < 0 
 			{
