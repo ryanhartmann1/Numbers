@@ -146,7 +146,7 @@ impl Groups
         words
     }
 
-	pub fn build(&self, val: i64, long: bool, fmt: Formatting) -> Words
+	pub fn build_dec(&self, val: i64, long: bool, fmt: Formatting) -> Words
 	{
 		let places: [Words; 7] = if long
         {
