@@ -13,7 +13,7 @@ impl Groups
     {
         let sign = Sign::new(val);
 
-        let val = i64::abs(val);
+        let mut val = i64::abs(val);
 
 		if fmt.Decimal
 		{
