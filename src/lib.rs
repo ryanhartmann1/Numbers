@@ -23,7 +23,7 @@ pub use formatting::Formatting;
 /// * `fmt`: the formatting options to use
 pub fn convert_def(val: i64) -> String
 {
-    groups::Groups::new(val)
+    groups::Groups::new(val, Formatting::def())
         .build(val, false, Formatting::def())
         .build(Formatting::def())
 }
@@ -34,7 +34,7 @@ pub fn convert_def(val: i64) -> String
 /// * `val` - the `i64` to convert
 pub fn convert_norm_dol(val: i64) -> String
 {
-    groups::Groups::new(val)
+    groups::Groups::new(val, Formatting::dollar())
         .build(val, false, Formatting::dollar())
         .build(Formatting::dollar())
 }
@@ -45,7 +45,7 @@ pub fn convert_norm_dol(val: i64) -> String
 /// * `val` - the `i64` to convert
 pub fn convert_norm_cent(val: i64) -> String
 {
-    groups::Groups::new(val)
+    groups::Groups::new(val, Formatting::cents())
         .build(val, false, Formatting::cents())
         .build(Formatting::cents())
 }
@@ -57,7 +57,7 @@ pub fn convert_norm_cent(val: i64) -> String
 /// * `fmt` - the formatting options to use
 pub fn convert_norm_euro(val: i64) -> String
 {
-    groups::Groups::new(val)
+    groups::Groups::new(val, Formatting::euro())
         .build(val, false, Formatting::euro())
         .build(Formatting::euro())
 }
@@ -65,7 +65,7 @@ pub fn convert_norm_euro(val: i64) -> String
 pub fn convert_def_dec(val: i64) -> String
 {
 
-	groups::Groups::new(val)
+	groups::Groups::new(val, Formatting::dec())
 		.build(val, false, Formatting::dec())
 		.build(Formatting::dec())
 }

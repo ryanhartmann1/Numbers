@@ -9,11 +9,19 @@ pub struct Groups(Sign, Vec<Group>);
 
 impl Groups
 {
-    pub fn new(val: i64) -> Groups
+    pub fn new(val: i64, fmt: Formatting) -> Groups
     {
         let sign = Sign::new(val);
 
         let val = i64::abs(val);
+
+		if fmt.Decimal
+		{
+			while val % 10 != 0
+			{
+				val = val / 10;
+			}
+		}
 
         let groups =
         {
