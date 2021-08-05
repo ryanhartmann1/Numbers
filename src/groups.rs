@@ -145,6 +145,129 @@ impl Groups
 
         words
     }
+
+	pub fn build(&self, val: i64, long: bool, fmt: Formatting) -> Words
+	{
+		let places: [Words; 7] = if long
+        {
+            [Words::new(vec![]),
+                Words::new(vec![Word::Number("thousand".to_owned())]),
+                Words::new(vec![Word::Number("milliard".to_owned())]),
+                Words::new(vec![Word::Number("million".to_owned())]),
+                Words::new(vec![
+                    Word::Number("thousand".to_owned()),
+                    Word::Space,
+                    Word::Number("million".to_owned())]),
+                Words::new(vec![Word::Number("billion".to_owned())]),
+                Words::new(vec![
+                    Word::Number("thousand".to_owned()),
+                    Word::Space,
+                    Word::Number("billion".to_owned())])]
+        }
+        else
+        {
+            [Words::new(vec![]),
+                Words::new(vec![Word::Number("thousand".to_owned())]),
+                Words::new(vec![Word::Number("million".to_owned())]),
+                Words::new(vec![Word::Number("billion".to_owned())]),
+                Words::new(vec![Word::Number("trillion".to_owned())]),
+                Words::new(vec![Word::Number("quadrillion".to_owned())]),
+                Words::new(vec![Word::Number("quintillion".to_owned())])]
+        };
+
+        let built = self.1.iter()
+            .enumerate()
+            .filter_map(|tup|
+            {
+                let index = tup.0;
+                let group = tup.1;
+
+                match group.build()
+                {
+                    None => None,
+                    Some(mut words) =>
+                    {
+                        if !places[index].is_empty()
+                        {
+                            words.add(Words::new(vec![Word::Space]));
+                            words.add(places[index].clone());
+                        }
+
+                        Some(words)
+                    }
+                }
+            })
+            .collect::<Vec<_>>();
+
+        if built.len() == 0
+        {
+            return Words::new(vec![
+                Word::Number("zero".to_owned())
+            ]);
+        }
+
+        let last = built.len() - 1;
+
+        let mut words = Words::new(vec![]);
+
+        for tup in built.into_iter().rev()
+            .enumerate()
+        {
+            let index = tup.0;
+            let group_words = tup.1;
+
+            words.add(group_words);
+
+            if index != last
+            {
+                words.add(Words::new(vec![
+                    Word::Comma
+                ]));
+            }
+        }
+
+        if self.0 == Sign::Negative
+        {
+            let mut temp = Words::new(vec![
+                Word::Number("negative".to_owned()),
+                Word::Space
+            ]);
+
+            temp.add(words);
+
+            return temp;
+        }
+
+		if fmt.dec()
+		{
+			if val %10 < 0 
+			{
+				words.add(Words::new(vec![Word::Tenths]));
+			}
+			if val % 100 < 0
+			{
+				words.add(Words::new(vec![Word::Hundreths]));
+			}
+			if val % 1000 < 0 
+			{
+				words.add(Words::new(vec![Word::Thousandths]));
+			}
+			if val % 10000 < 0
+			{
+				words.add(Words::new(vec![Word::TenThousandths]));
+			}
+			if val % 100000 < 0
+			{
+				words.add(Words::new(vec![Word::HundredThousandths]));
+			}
+			if val % 1000000 < 0 
+			{
+				words.add(Words::new(vec![Word::Millionths]));
+			}
+		}
+
+		words
+	}
 }
 
 pub struct Group(Hundreds, Tens, Decimal);
@@ -155,7 +278,7 @@ impl Group
     {
         assert!(val < 1000);
 
-		let decimal = Decimal::new(val % 10);
+		let decimal = Decimal::new(val);
         let hundreds = Hundreds::new(val / 100);
         let tens = Tens::new(val % 100);
 

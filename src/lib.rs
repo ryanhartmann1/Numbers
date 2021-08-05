@@ -61,3 +61,11 @@ pub fn convert_norm_euro(val: i64) -> String
         .build(false, Formatting::euro())
         .build(Formatting::euro())
 }
+
+pub fn convert_def_dec(val: i64) -> String
+{
+
+	groups::Groups::new(val)
+		.build(false, Formatting::dec())
+		.build(val, false, Formatting::dec())
+}

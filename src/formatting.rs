@@ -22,6 +22,8 @@ pub struct Formatting
 	pub Euro: bool,
 	///Blank entry instead of dollars or euros
 	pub Nothing: bool,
+	///Controls whether "ths" is added
+	pub Decimal: bool,
 }
 
 impl Formatting
@@ -39,7 +41,8 @@ impl Formatting
 			Dollar: false,
 			Cents: false,
 			Euro: false,
-			Nothing: true
+			Nothing: true,
+			Decimal: false
         }
     }
 	
@@ -56,7 +59,8 @@ impl Formatting
 			Dollar: true,
 			Cents: false,
 			Euro: false,
-			Nothing: false
+			Nothing: false,
+			Decimal: false
         }
     }
 
@@ -73,7 +77,8 @@ impl Formatting
 			Dollar: false,
 			Cents: true,
 			Euro: false,
-			Nothing: false
+			Nothing: false,
+			Decimal: false
         }
     }
 	
@@ -89,7 +94,25 @@ impl Formatting
 			Dollar: false,
 			Cents: false,
 			Euro: true,
-			Nothing: false
+			Nothing: false,
+			Decimal: false
+		}
+	}
+
+	pub fn dec() -> Formatting
+	{
+		Formatting
+		{
+			title_case: true,
+			spaces: true,
+			conjunctions: false,
+			commas: false,
+			dashes: false,
+			Dollar: false,
+			Cents: false,
+			Euro: false,
+			Nothing: false,
+			Decimal: true
 		}
 	}
 }
