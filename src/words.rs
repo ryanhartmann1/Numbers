@@ -38,6 +38,12 @@ pub enum Word
 	Dollar,
 	Cents,
 	Euro,
+	Tenths,
+	Hundreths,
+	Thousandths,
+	TenThousandths,
+	HundredThousandths,
+	Millionths,
 }
 
 impl Word
@@ -124,6 +130,54 @@ impl Word
 			&Word::Euro => if fmt.Euro
 			{
 				String::from(" Euros")
+			}
+			else
+			{
+				String::new()
+			}
+			&Word::Tenths => if fmt.Decimal
+			{
+				String::from(" Tenths")
+			}
+			else
+			{
+				String::new()
+			}
+			&Word::Hundreths => if fmt.Decimal
+			{
+				String::from(" Hundreths")
+			}
+			else
+			{
+				String::new()
+			}
+			&Word::Thousandths => if fmt.Decimal
+			{
+				String::from(" Tousandths")
+			}
+			else
+			{
+				String::new()
+			}
+			&Word::TenThousandths => if fmt.Decimal
+			{
+				String::from(" TenThousandths")
+			}
+			else
+			{
+				String::new()
+			}
+			&Word::HundredThousandths => if fmt.Decimal
+			{
+				String::from(" HundredThousandths")
+			}
+			else
+			{
+				String::new()
+			}
+			&Word::Millionths => if fmt.Decimal
+			{
+				String::from(" Millionths")
 			}
 			else
 			{
