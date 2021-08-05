@@ -66,6 +66,6 @@ pub fn convert_def_dec(val: i64) -> String
 {
 
 	groups::Groups::new(val)
-		.build_dec(val, false, Formatting::dec())
+		.build(false, Formatting::dec())
 		.build(Formatting::dec())
 }
