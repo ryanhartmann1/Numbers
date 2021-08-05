@@ -155,41 +155,21 @@ impl Groups
 			{
 				words.add(Words::new(vec![Word::Hundreths]));
 			}
-			else
-			{
-				words
-			}
-			if val / 1000 < 1
+			else if val / 1000 < 1
 			{
 				words.add(Words::new(vec![Word::Thousandths]));
 			}
-			else
-			{
-				words
-			}
-			if val / 10000 < 1
+			else if val / 10000 < 1
 			{
 				words.add(Words::new(vec![Word::TenThousandths]));
 			}
-			else
-			{
-				words
-			}
-			if val / 100000 < 1
+			else if val / 100000 < 1
 			{
 				words.add(Words::new(vec![Word::HundredThousandths]));
 			}
-			else
-			{
-				words
-			}
-			if val / 1000000 < 1 
+			else if val / 1000000 < 1 
 			{
 				words.add(Words::new(vec![Word::Millionths]));
-			}
-			else
-			{
-				words
 			}
 		}
 
