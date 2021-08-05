@@ -278,7 +278,7 @@ impl Group
     {
         assert!(val < 1000);
 
-		let decimal = Decimal::new(val);
+		
         let hundreds = Hundreds::new(val / 100);
         let tens = Tens::new(val % 100);
 
